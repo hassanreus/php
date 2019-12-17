@@ -1,0 +1,83 @@
+h2
+{
+    font-size: 2vw;
+    text-align: center;
+    margin: 0;
+}
+h1{
+    font-size: 1vw;
+    text-align: center;
+    margin: 0;
+}
+.h1{
+    margin-left: 15%;
+    width: 60%;
+    font-size: 200%;
+    color: antiquewhite;
+}
+p{
+    font-size: 1vw;
+    margin: 0;
+}
+table{
+    width: 95%;
+}
+
+td{
+    border: 1px solid black;
+    width: 5%;
+    height: 60%;
+    border-radius: 10%;
+}
+#hidden{
+    border:none;
+}
+body{
+    background: url("https://sciencenotes.org/wp-content/uploads/2016/11/GlowInTheDarkPeriodicTable2016.jpg") no-repeat fixed center;
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    margin-left: 3%;
+}
+.color_1 {
+    background-color: #ffd700;
+}
+.color_2 {
+    background-color: #ff1493;
+}
+.color_3 {
+    background-color: #A0A0A0;
+}
+.color_4 {
+    background-color: #b22222;
+}
+.color_5 {
+    background-color: #6a5acd;
+}
+.color_6 {
+    background-color: #7FFF00;
+}
+.color_7 {
+    background-color: #4169e1;
+}
+.color_8 {
+    background-color: #ff8c00;
+}
+.color_9
+{
+    background-color: #ED14B8;   
+}
+.color_10
+{
+    background-color: #64108B;
+}
+.right
+{
+    text-align: right;
+    margin-right: 2px;
+}
+.left
+{
+    text-align: left;
+    margin-left: 2px;
+}

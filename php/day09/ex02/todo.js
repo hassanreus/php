@@ -34,7 +34,7 @@ function delCookie(id) {
 function list_new()
 {
        var name = prompt("Enter a nmae to do list:");
-       if (name)
+       if (name != null && name != "")
        {
               var div = document.createElement('div');
               var text = document.createTextNode(name);

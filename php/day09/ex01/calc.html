@@ -23,7 +23,8 @@
     {
         var left = document.getElementById('left').value;
         var right = document.getElementById('right').value;
-        if ((!left >= 0 || !right >= 0) && (isNaN(left) || isNaN(right)))
+        // && (left = left.replace(/\s+/g, ' ')
+        if (((!left >= 0 || !right >= 0) && (isNaN(left) || isNaN(right))) || (left === '' || right === ''))
             alert("Error:(");
         else
         {

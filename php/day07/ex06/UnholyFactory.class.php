@@ -19,7 +19,6 @@
             else {
                 print("(Factory can't absorb this, it's not a fighter)" . PHP_EOL);
             }
-
         }
 
         public function fabricate($var)

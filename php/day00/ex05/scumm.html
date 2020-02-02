@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="scumm.css">
+    <title>Day of the 42</title>
+</head>
+<body>
+    <div class="gray top_page">
+        <img src="./resources/day_of_the_42.png" alt="d42" title="d42" id="d42">
+        <div id="top_r">
+            <a href="scumm.html"><img src="./resources/reload.png" alt="reload" title="reload" id="reload"></a>
+            <a href="https://www.relaischateaux.com/" target="_blank"><img src="./resources/close.gif" alt="close" title="close" id="close"></a>
+        </div>
+        <img src="./resources/loupe.png" alt="loupe" title="loupe" id="loupe">
+    </div>
+    <div class="middel">
+        <div class="gray left">
+            <img src="resources/arrow.png" alt="arrow" title="arrow" id="arrow"/>
+            <img src="resources/main.png" alt="main" title="main" id="main"/>
+            <img src="resources/oeil.png" alt="oeil" title="oeil" id="oeil"/>
+            <img src="resources/outil.png" alt="outil" title="outil" id="outil"/>
+            <img src="resources/chat-icon.png" alt="chat-icon" title="chat-icon" id="chat-icon"/>
+        </div>
+        <div class="gray apple_ikea_css">            
+            <img src="resources/jocker.jpg" alt="cluster" title="cluster" id="cluster"/>
+        </div>
+        
+        <div class="gray right">
+            <img src="resources/book.png" alt="book" title="book" id="book"/>
+            <img src="resources/towel.png" alt="towel" title="towel" id="towel"/>
+            <div id="bricks" alt="bricks" title="bricks"></div>
+        </div>
+        
+        <div class="form">
+                <div style="margin-left: 10px; margin-top: 10px;">
+                <p id="para" style="font-size: 1vw;">Please confirm you wanna play with us.</p>
+                </div>
+                <input type="submit" id="yes" title="Yes" value="Yes" onclick="f_yes();">
+                <input id="no" type="submit" title="No" value="No" onclick="f_no();">
+                <div id="res"></div>
+        </div>
+    </div>
+    <script>
+        var oeil = document.getElementById("oeil");
+        oeil.style.border = "none";
+        var par = document.getElementById("para");
+        var no = document.getElementById("no");
+        var yes = document.getElementById('yes');
+        var res = document.getElementById("res");
+
+        function f_yes(){
+            location.replace("chat.html");
+        }
+
+        function f_no(){
+            par.innerHTML = "If you make wrong choose.";
+            yes.parentNode.removeChild(yes);
+            no.parentNode.removeChild(no);
+            var restart = document.createElement("input");
+            restart.setAttribute("type", "submit");
+            restart.setAttribute("value", "Restart");
+            restart.setAttribute("onclick", "f_res();");
+            res.appendChild(restart);
+        }
+
+        function f_res(){
+            location.replace("scumm.html");
+        }
+    </script>
+    </body>
+</html>

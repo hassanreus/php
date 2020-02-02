@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="scumm.css">
+    <title>Day of the 42</title>
+</head>
+<body>
+    <div class="gray top_page">
+        <img src="./resources/day_of_the_42.png" alt="d42" title="d42" id="d42">
+        <div id="top_r">
+            <a href="scumm.html"><img src="./resources/reload.png" alt="reload" title="reload" id="reload"></a>
+            <a href="https://www.relaischateaux.com/" target="_blank"><img src="./resources/close.gif" alt="close" title="close" id="close"></a>
+        </div>
+        <img src="./resources/loupe.png" alt="loupe" title="loupe" id="loupe">
+    </div>
+    <div class="middel">
+        <div class="gray left">
+            <img src="resources/arrow.png" alt="arrow" title="arrow" id="arrow"/>
+            <img src="resources/main.png" alt="main" title="main" id="main"/>
+            <img src="resources/oeil.png" alt="oeil" title="oeil" id="oeil"/>
+            <img src="resources/outil.png" alt="outil" title="outil" id="outil"/>
+            <img src="resources/chat-icon.png" alt="chat-icon" title="chat-icon" id="chat-icon"/>
+        </div>
+        <div class="gray apple_ikea_css">            
+            <img src="resources/ano.jpg" alt="cluster" title="cluster" id="cluster"/>
+        </div>
+        
+        <div class="gray right">
+            <img src="resources/book.png" alt="book" title="book" id="book"/>
+            <img src="resources/towel.png" alt="towel" title="towel" id="towel"/>
+            <div id="bricks" alt="bricks" title="bricks"></div>
+        </div>
+        <div class="form">
+                <div style="margin-left: 10px; margin-top: 10px;">
+                    <p style="font-size: 1vw;" id="para">Before you begin we want to know your name.</p>
+                </div>
+                <input type="text" name="field" id="field" title="Type your message here">
+                <input type="submit" name="send" id="sup" title="Send message" value="Submit" onclick="f_play();">
+                <div id="btn"></div>
+        </div>
+    </div>
+    <script>
+        var oeil = document.getElementById("oeil");
+        oeil.style.border = "none";
+        var para = document.getElementById("para");
+        var field = document.getElementById("field");
+        var sup = document.getElementById("sup");
+        var btn = document.getElementById("btn");
+        function f_play(){
+            if (field.value != ""){
+                para.innerHTML = "Thank you ! Mr :" + field.value;
+                var b = document.createElement("input");
+                b.setAttribute("type", "submit");
+                b.setAttribute("value", "Start !");
+                b.setAttribute("onclick", "f_b();");
+                b.style.fontSize = "120%";
+                b.width = "2vw";
+                btn.appendChild(b);
+                field.style.display = "none";
+                sup.parentNode.removeChild(sup);
+            }
+        }
+        function f_b(){
+            location.replace("begin.html")
+        }
+    </script>
+    </body>
+</html>

@@ -64,26 +64,69 @@ body{
   float:left;
   margin-left:3%;
  }
+
+ .movies{
+  width:72%;
+  padding:1%;
+  float:left;
+  margin-top: 20%;
+  margin-left:3%;
+ }
+
+ .movies img{
+  filter: blur(5px);
+  margin-left: 5%;
+ }
+
+ #j{
+  width: 5vw;
+  height: 11vh;
+  float: right;
+  margin-top: -32%;
+  margin-right: 67%;
+  position: relative;
+}
+
+#i{
+  width: 5vw;
+  height: 11vh;
+  float: right;
+  margin-top: -16%;
+  margin-right: 23%;
+  position: relative;
+}
+
+#sp{
+  width: 5vw;
+  height: 11vh;
+  float: right;
+  margin-top: -32%;
+  margin-right: 11%;
+  position: relative;
+}
+
+#st{
+  width: 5vw;
+  height: 11vh;
+  float: right;
+  margin-top: -32%;
+  margin-right: 78%;
+  position: relative;
+}
+
+#a{
+  width: 5vw;
+  height: 11vh;
+  float: right;
+  margin-top: -32%;
+  margin-right: 23%;
+  position: relative;
+}
+
  #cluster{
    width:100%;
    display:block;
    margin:auto;
- }
- #ikea{
-  width: 4vw;
-  height: 22vh;
-  float: right;
-  margin-top: -22%;
-  margin-right: 59%;
-  position: relative;
- }
- #apple{
-  width: 10vw;
-  height: 18vh;
-  float: right;
-  margin-top: -24%;
-  margin-right: 2%;
-  position: relative;
  }
  .left{
   width:8%;

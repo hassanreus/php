@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="scumm.css">
+    <title>Day of the 42</title>
+</head>
+<body>
+    <div class="gray top_page">
+        <img src="./resources/day_of_the_42.png" alt="d42" title="d42" id="d42">
+        <div id="top_r">
+            <a href="scumm.html"><img src="./resources/reload.png" alt="reload" title="reload" id="reload"></a>
+            <a href="https://www.relaischateaux.com/" target="_blank"><img src="./resources/close.gif" alt="close" title="close" id="close"></a>
+        </div>
+        <img src="./resources/loupe.png" alt="loupe" title="loupe" id="loupe">
+    </div>
+    <div class="middel">
+        <div class="gray left">
+            <img src="resources/arrow.png" alt="arrow" title="arrow" id="arrow"/>
+            <img src="resources/main.png" alt="main" title="main" id="main" onclick="action();"/>
+            <img src="resources/oeil.png" alt="oeil" title="oeil" id="oeil"/>
+            <img src="resources/outil.png" alt="outil" title="outil" id="outil"/>
+            <img src="resources/chat-icon.png" alt="chat-icon" title="chat-icon" id="chat-icon"/>
+        </div>
+        <div class="gray apple_ikea_css">            
+            <img src="resources/movies.png" alt="movies" title="movies" id="cluster"/>
+            <a href="#" id="j" title="jocker" onclick="jocker();"></a>
+            <a href="#" id="i" title="it" onclick="f_it();"></a>
+            <a href="#" id="sp" title="sped" onclick="f_sped();"></a>
+            <a href="#" id="st" title="star" onclick="f_star();"></a>
+            <a href="#" id="a" title="aladin" onclick="f_aladin();"></a>
+        </div>
+   
+        <div class="gray right">
+            <img src="resources/book.png" alt="book" title="book" id="book"/>
+            <img src="resources/towel.png" alt="towel" title="towel" id="towel"/>
+            <div id="bricks" alt="bricks" title="bricks"></div>
+        </div>
+        <div class="form">
+                <div style="margin-left: 10px; margin-top: 10px;">
+                    <p style="font-size: 1vw;">To play : click in icon action and choose the right movies.</p>
+                </div>
+        </div>
+        <div id="all_filter" style="border: 2px red solid;" class="gray movies">
+            <img src="resources/jocker_m.jpg" class="filter" id="jocker_m" alt="jcker" width="12%">
+            <img src="resources/it.jpg" class="filter" id="it" alt="it" width="12%">
+            <img src="resources/sped.jpg" class="filter" id="sped" alt="sped" width="12%">
+            <img src="resources/star.jpg" class="filter" id="star" alt="star" width="12%">
+            <img src="resources/aladin.jpg" class="filter" id="aladin" alt="star" width="12%">
+        </div>
+    </div>
+    <script>
+        var oeil = document.getElementById("oeil");
+        oeil.style.border = "none";
+        var main = document.getElementById("main");
+        main.style.border = "4px solid red";
+        main.style.borderRadius = "5px";
+        var jocker_m = document.getElementById("jocker_m");
+        var it = document.getElementById("it");
+        var sped = document.getElementById("sped");
+        var star = document.getElementById("star");
+        var aladin = document.getElementById("aladin");
+        var x = 0;
+        var filter = document.getElementById("all_filter").querySelectorAll(".filter");
+        var cnt = 0
+        var r = false;
+        function action(){
+            x = 1;
+        }
+        function jocker(){
+            if (x == 1){
+                jocker_m.style.filter = "none";
+                x = 0;
+                if (filter[0].style.filter == "none")
+                    cnt++;
+                document.getElementById("j").style.display = "none";
+                if (cnt == 5)
+                    r = confirm("If you want restart click on button yes.");
+                if (r == true)
+                    location.replace("main.html");
+            }
+        }
+        function f_it(){
+            if (x == 1){
+                it.style.filter = "none";
+                x = 0;
+                if (filter[1].style.filter == "none")
+                    cnt++;
+                document.getElementById("i").style.display = "none";
+                if (cnt == 5)
+                    r = confirm("If you want restart click on button OK.");
+                if (r == true)
+                    location.replace("main.html");
+            }
+        }
+        function f_sped(){
+            if (x == 1){
+                sped.style.filter = "none";
+                x = 0;
+                if (filter[2].style.filter == "none")
+                    cnt++;
+                document.getElementById("sp").style.display = "none";
+                if (cnt == 5)
+                    r = confirm("If you want restart click on button OK.");
+                if (r == true)
+                    location.replace("main.html");
+            }
+        }
+        function f_star(){
+            if (x == 1){
+                star.style.filter = "none";
+                x = 0;
+                    if (filter[3].style.filter == "none")
+                        cnt++;
+                document.getElementById("st").style.display = "none";
+                if (cnt == 5)
+                    r = confirm("If you want restart click on button OK.");
+                if (r == true)
+                    location.replace("main.html");
+            }
+        }
+        function f_aladin(){
+            if (x == 1){
+                aladin.style.filter = "none";
+                x = 0;
+                    if (filter[4].style.filter == "none")
+                        cnt++;
+                document.getElementById("a").style.display = "none";
+                if (cnt == 5)
+                    r = confirm("If you want restart click on button OK.");
+                if (r == true)
+                    location.replace("main.html");
+            }
+        }
+    </script>
+    </body>
+</html>

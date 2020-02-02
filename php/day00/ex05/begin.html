@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="doft.css">
+    <link rel="stylesheet" type="text/css" href="scumm.css">
     <title>Day of the 42</title>
 </head>
 <body>
     <div class="gray top_page">
         <img src="./resources/day_of_the_42.png" alt="d42" title="d42" id="d42">
         <div id="top_r">
-            <a href="http://www.disney.com/" target="_blank"><img src="./resources/reload.png" alt="reload" title="reload" id="reload"></a>
+            <a href="scumm.html"><img src="./resources/reload.png" alt="reload" title="reload" id="reload"></a>
             <a href="https://www.relaischateaux.com/" target="_blank"><img src="./resources/close.gif" alt="close" title="close" id="close"></a>
         </div>
         <img src="./resources/loupe.png" alt="loupe" title="loupe" id="loupe">
@@ -16,15 +16,13 @@
     <div class="middel">
         <div class="gray left">
             <img src="resources/arrow.png" alt="arrow" title="arrow" id="arrow"/>
-            <img src="resources/main.png" alt="main" title="main" id="main"/>
+            <img src="resources/main.png" alt="main" title="main" id="main" onclick="action();"/>
             <img src="resources/oeil.png" alt="oeil" title="oeil" id="oeil"/>
             <img src="resources/outil.png" alt="outil" title="outil" id="outil"/>
             <img src="resources/chat-icon.png" alt="chat-icon" title="chat-icon" id="chat-icon"/>
         </div>
         <div class="gray apple_ikea_css">            
-            <img src="resources/cluster.jpg" alt="cluster" title="cluster" id="cluster"/>
-            <a href="http://www.ikea.com/" id="ikea" title="ikea" target="_blank"></a>
-            <a href="https://www.apple.com/" id="apple" title="apple" target="_blank"></a>
+            <img src="resources/beretta.jpg" alt="cluster" title="cluster" id="cluster"/>
         </div>
         
         <div class="gray right">
@@ -32,18 +30,26 @@
             <img src="resources/towel.png" alt="towel" title="towel" id="towel"/>
             <div id="bricks" alt="bricks" title="bricks"></div>
         </div>
-        
         <div class="form">
-            <div style="margin-left: 10px; margin-top: 10px;">
-              <p>Vous </p><h2>entrez</h2><p> alors dans une grande piece remplie</p>
-              <p>d'<h3>ordinateurs</h3></p><p>...</p>
-              <p><br><i> - Bonjour, vous êtes nouveau ici ?</i></p>
-            </div>
-            <form>
-              <input type="text" name="field" title="Type your message here">
-              <input type="submit" name="send" title="Send message" value="Repondre">
-            </form>
+                <div style="margin-left: 10px; margin-top: 10px;">
+                    <p style="font-size: 1vw;">Test : choose the icon action before you continue.</p>
+                </div>
+                <input type="submit" id="play" title="play" value="Play now!" onclick="f_play();">
         </div>
     </div>
-</body>
+    <script>
+        var oeil = document.getElementById("oeil");
+        oeil.style.border = "none";
+        var main = document.getElementById("main");
+        main.style.border = "4px solid red";
+        var x = 0;
+        function f_play(){
+            if (x == 1)
+                location.replace("main.html");
+        }
+        function action(){
+            x = 1;
+        }
+    </script>
+    </body>
 </html>

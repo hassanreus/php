@@ -11,10 +11,10 @@
            if ($nbr % 2 == 0)
                 echo "The number $new_str is even\n";
            else
-           echo "The number $new_str is odd\n";
+        	   echo "The number $new_str is odd\n";
         }
         else
-        echo "'$error' is not a number\n";
+			echo "'$error' is not a number\n";
         echo "Enter a number: ";
     }
     if (feof(STDIN))

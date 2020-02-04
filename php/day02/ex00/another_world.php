@@ -4,6 +4,6 @@
     {
         $any_space = "/\s+/";
         $replace = " ";
-        echo preg_replace($any_space, $replace, trim($argv[1]));
+        echo preg_replace($any_space, $replace, trim($argv[1]))."\n";
     }
 ?>

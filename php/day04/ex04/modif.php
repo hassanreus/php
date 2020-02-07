@@ -14,7 +14,9 @@
             }
             if ($flag){
                 file_put_contents($file, serialize($arr));
+                header('Location: index.html');
                 echo "OK";
+                exit ;
             }else
                 echo "ERROR\n";
         }else 

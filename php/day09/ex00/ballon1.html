@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Ballon</title>
+    <style>
+        #ballon{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 20%;;
+        }
+    </style>
+</head>
+<body>
+    <div id="ballon" onclick="occurs();"></div>
+</body>
+<script>
+    function occurs(){
+        var ballon = document.getElementById('ballon');
+        ballon.offsetHeight += "10px";
+    }
+</script>
+</html>

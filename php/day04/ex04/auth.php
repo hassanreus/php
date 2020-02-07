@@ -1,7 +1,9 @@
 <?php
     function auth($login, $passwd){
-        if ($login === "" || $passwd === "")
-            return FALSE;
+        if (!file_exists('../private')) {
+            mkdir("../private");
+            file_put_contents('../private/passwd', null);
+        }
         $file = "../private/passwd";
         $pass = hash(whirlpool, $passwd);
         $arr = unserialize(file_get_contents($file));

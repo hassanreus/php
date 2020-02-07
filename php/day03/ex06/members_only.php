@@ -10,8 +10,6 @@
     }
     else
     {
-        $user = $_SERVER['PHP_AUTH_USER'];
-        $pass = $_SERVER['PHP_AUTH_PW'];
         $str = file_get_contents("../img/42.png");
         $str64 = base64_encode($str);
 ?>

@@ -21,7 +21,9 @@
                 $tab['passwd'] = hash(whirlpool, $_POST['passwd']);
                 $arr[] = $tab;
                 file_put_contents($file, serialize($arr));
-                echo "OK\n";
+                header('Location: index.html');
+                echo "OK";
+                exit ;
             }
     }else
         echo "ERROR\n";

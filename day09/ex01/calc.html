@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calc</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="left">
+        <select id="select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right">
+        <input type="submit" value="Try me!" onclick="Try_me();">
+    </form>
+</body>
+<script>
+    setTimeout("alert('Please, use me...')",30000);
+    function Try_me()
+    {
+        var left = document.getElementById('left').value;
+        var right = document.getElementById('right').value;
+        var sign = document.querySelector('select').value;
+        if ((left < 0 || right < 0) || ((isNaN(left) || isNaN(right))) || (left === '' || right === ''))
+            alert("Error:(");
+        else
+        {
+            if (sign === '+')
+                var result = Number(left) + Number(right);
+            else if (sign === '-')
+                result = Number(left) - Number(right);
+            else if (sign === '*')
+                result = Number(left) * Number(right);
+            else if (sign === '/')
+            {
+                if (left === '0' || right === '0'){console.log("It’s over 9000!");alert("It’s over 9000!");return ;}
+                else
+                    result = Number(left) / Number(right);
+            }
+            else if (sign === '%')
+            {
+                if (left === '0' || right === '0'){console.log("It’s over 9000!");alert("It’s over 9000!");return ;}
+                else
+                    result = Number(left) % Number(right);
+            }
+            console.log(result);
+            alert(result);
+        }
+    }
+</script>
+</html>

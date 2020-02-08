@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calc</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <input type="text" id="left">
+        <select id="select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right">
+        <input id="button" type="submit" value="Try me!">
+    </form>
+</body>
+<script>
+    $(document).ready(function(){
+            setTimeout("alert('Please, use me...')",30000);
+            $('#button').click(function (){
+                var left = $('#left').val();
+                var right = $('#right').val();
+                var sign = $('#select option:selected').attr("value");
+                if ((left < 0 || right < 0) || ((isNaN(left) || isNaN(right))) || (left === '' || right === ''))
+                    alert("Error:(");
+                else
+                {
+                    if (sign === '+')
+                    var result = Number(left) + Number(right);
+                    else if (sign === '-')
+                        result = Number(left) - Number(right);
+                    else if (sign === '*')
+                        result = Number(left) * Number(right);
+                    else if (sign === '/')
+                    {
+                        if (left === '0' || right === '0'){console.log("It’s over 9000!");alert("It’s over 9000!");return ;}
+                        else
+                            result = Number(left) / Number(right);
+                    }
+                    else if (sign === '%')
+                    {
+                        if (left === '0' || right === '0'){console.log("It’s over 9000!");alert("It’s over 9000!");return ;}
+                        else
+                            result = Number(left) % Number(right);
+                    }
+                    console.log(result);
+                    alert(result);
+                }
+            });
+        });
+
+</script>
+</html>

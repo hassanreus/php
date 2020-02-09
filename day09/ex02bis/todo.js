@@ -26,7 +26,7 @@ function getCookie() {
 }
 
 function list_new() {
-    var name = prompt("Enter a nmae to do list:");
+    var name = prompt("Enter a name to do list:");
     if (name != null && name != "") {
         var id = ++j;
         $('<div/>', {
@@ -36,10 +36,6 @@ function list_new() {
         }).insertAfter(list);
         setCookie(id, name, 3000);
     }
-}
-
-function delCookie(id) {
-    document.cookie = id + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 function list_del(id) {

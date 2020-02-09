@@ -29,7 +29,7 @@ function getCookie() {
 
 function list_new()
 {
-    var name = prompt("Enter a nmae to do list:");
+    var name = prompt("Enter a name to do list:");
     if (name != null && name != "")
     {
         var div = document.createElement('div');

@@ -1,27 +1,29 @@
 #!/usr/bin/php
 <?php
 	if ($argc == 2){
-		$string =  $argv[1];
+		if(strstr($argv[1], 'http:'))
+			$url = preg_replace('/http/', 'https', $argv[1]);
+		else
+			$url = $argv[1];
 		$handle = curl_init();
-		curl_setopt($handle, CURLOPT_URL, $string);
-		curl_setopt($handle, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($handle, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($handle, CURLOPT_URL, $url);
 		$data = curl_exec($handle);
-		// $string = preg_replace("http:\/\/.*", $string = substr($string, 7),$string);
-		if (preg_match("/^http:\/-|(www\.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/", $string, $matchs) && $data){
-			//echo $matchs[0];
-			$path = $matchs[0];
-			$file = $path;
+		if ($data){
+			preg_match('/(.*www.)?(.+)/', $argv[1], $matches);
+			$path = $matches[2];
 			if (!file_exists($path)){
 				mkdir($path);
-				echo $data;
-				if (preg_match('/<img[^>]+src\s*=\s*"([^">]+)/', $data, $matchs)){
-					echo $matchs[1];
+				preg_match_all('/<img[^>]+src\s*=\s*"([^">]+)"/', $data, $matchs);
+				foreach ($matchs[1] as $match){
+					if(!in_array("https:", explode("/", $match)))
+						$match = $url.$match;
+					$tmp1 = explode('/', $match);
+					$img = preg_match('/.*\/(.+)/', $match, $name);
+					file_put_contents($path."/".$name[1], $img);
 				}
-				//$img = file_get_contents("http://".$path."images/home_big.jpg",NULL);
-				//file_put_contents($file."omg.jpg" ,$img);
 			}
-		}else
-			echo "EROOR\n";
+		}
 		curl_close($handle);
 	}
 ?>

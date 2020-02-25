@@ -5,9 +5,9 @@
             file_put_contents('../private/passwd', null);
         }
         $file = "../private/passwd";
-        $pass = hash(whirlpool, $passwd);
+        $pass = hash('whirlpool', $passwd);
         $arr = unserialize(file_get_contents($file));
-        if ($arr){
+        if ($arr) {
             foreach($arr as $elem => $key){
                 if ($key['login'] === $login && $key['passwd'] === $pass)
                     return TRUE;
